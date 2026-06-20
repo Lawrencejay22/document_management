@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="document-track.css">
+    <title>DocHub - Document Tracker</title>
+</head>
+
+<body>
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+    <div class="app-container">
+        <!-- ============= sidebar ============= -->
+        <aside class="sidebar">
+            <div class="logo-div">
+                <i class="fa-solid fa-folder-open logo-icon"></i>
+                <h2>Docker-Up</h2>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="section-title">CATEGORIES</p>
+                <nav>
+                    <ul>
+                        <li class="active">
+                            <a href="#"><i class="fa-solid fa-globe"></i> All Documents</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-earth-americas"
+                                    style="color: var(--color-green); margin-right: 8px;"></i> Public</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-lock"
+                                    style="color: var(--color-gray); margin-right: 8px;"></i> Private</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chalkboard-user"
+                                    style="color: var(--color-blue); margin-right: 8px;"></i> Faculty Only</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-users"
+                                    style="color: var(--color-purple); margin-right: 8px;"></i> HR Only</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-graduation-cap"
+                                    style="color: var(--color-yellow); margin-right: 8px;"></i> Registrar Only</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-coins"
+                                    style="color: var(--color-teal); margin-right: 8px;"></i> Finance Only</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- ============= dashboard ============= -->
+        <main class="main-content">
+            <header class="top-bar">
+                <button class="btn-primary"><i class="fa-solid fa-plus"></i> Share Document</button>
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search documents...">
+                </div>
+            </header>
+
+            <section class="dashboard-section" id="global">
+                <div class="table-container">
+                    <table class="document-table">
+                        <thead>
+                            <tr>
+                                <th>Document Details</th>
+                                <th>Shared By</th>
+                                <th>Category</th>
+                                <th>Size</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="document-list">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share New Document</h3>
+                <button class="close-modal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <form id="uploadForm">
+                <div class="input-group">
+                    <label for="docTitle">Document Title</label>
+                    <input type="text" id="docTitle" required placeholder="Enter document title">
+                </div>
+                <div class="input-group">
+                    <label for="docDesc">Description</label>
+                    <textarea id="docDesc" rows="3" required placeholder="Enter description"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="docCategory">Access Visibility</label>
+                    <select id="docCategory" required>
+                        <option value="Public">🌐 Public (All users can view and download)</option>
+                        <option value="Private">🔒 Private (Only the uploader can view and access)</option>
+                        <option value="Faculty Only">🏫 Faculty Only</option>
+                        <option value="HR Only">👔 HR Only</option>
+                        <option value="Registrar Only">🎓 Registrar Only</option>
+                        <option value="Finance Only">💰 Finance Only</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="docFile">File</label>
+                    <input type="file" id="docFile" required>
+                </div>
+                <div class="form-actions" style="margin-top: 20px;">
+                    <button type="submit" class="btn-primary">Upload Document</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="document-track.js"></script>
+</body>
+
+</html>

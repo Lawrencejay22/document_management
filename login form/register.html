@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+    
+    <div class="login-container">
+        <form action="../PHP/register.php" method="POST" id="registerForm">
+            <div class="form-header">
+                <h3>Create Account</h3>
+                <p>Please enter your details to register.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <div class="input-field">
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <div class="input-field">
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="department">Department</label>
+                <div class="input-field">
+                    <select id="department" name="department" required style="width: 100%; padding: 14px 16px 14px 45px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: #f8fafc; font-size: 15px; font-family: inherit; appearance: none; outline: none; cursor: pointer;">
+                        <option value="" disabled selected style="background: #1e293b;">Select your department</option>
+                        <option value="Public" style="background: #1e293b;">🌐 Public (All users can view and download)</option>
+                        <option value="Private" style="background: #1e293b;">🔒 Private (Only the uploader can view and access)</option>
+                        <option value="Faculty Only" style="background: #1e293b;">🏫 Faculty Only</option>
+                        <option value="HR Only" style="background: #1e293b;">👔 HR Only</option>
+                        <option value="Registrar Only" style="background: #1e293b;">🎓 Registrar Only</option>
+                        <option value="Finance Only" style="background: #1e293b;">💰 Finance Only</option>
+                    </select>
+                    <i class="fa-solid fa-building"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-field">
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-login">Register</button>
+            </div>
+
+            <div class="links">
+                <a>Already have an account? <span href="login.html">Login </span> </a>
+                <a href="index.html" class="home-link">Go back to home page</a>
+            </div>
+
+            <div class="social-login">
+                <p>Or continue with</p>
+                <div class="icons">
+                    <a href="https://myaccount.google.com/signin" class="social-icon"><i
+                            class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
